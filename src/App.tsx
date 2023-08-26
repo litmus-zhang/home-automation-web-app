@@ -1,17 +1,18 @@
-import { FormControl, FormLabel, Input } from "@chakra-ui/react"
+import React from "react"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import DeviceList from "./screens/DeviceList";
 
 
-function App() {
-
-  return (
-    <>
-      <h1> Home Automation Web App </h1>
-      <FormControl>
-        <FormLabel>Input Device Pin</FormLabel>
-        <Input placeSelf={"PIN"} />
-      </FormControl>
-    </>
-  )
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <DeviceList/>
+  }
+])
+function App(){
+return (
+<RouterProvider router={router} />
+)
 }
 
-export default App
+export default App;
