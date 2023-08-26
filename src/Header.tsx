@@ -39,7 +39,8 @@ export default function Header(){
           {show ? 'Hide' : 'Show'}
         </Button>
       </InputRightElement>
-    </InputGroup>  </FormControl>  
+    </InputGroup>  
+    </FormControl>  
   </VStack>
         
   </ModalBody>
