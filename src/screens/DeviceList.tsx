@@ -1,4 +1,4 @@
-import { Button, Card, Text, Stack, HStack, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, FormControl, FormLabel, Input } from "@chakra-ui/react";
+import { Button, Card, Text, Stack, HStack, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, FormControl, FormLabel, Input, VStack } from "@chakra-ui/react";
 import Header from "../Header";
 import {DEVICES} from "../../constants";
 
@@ -6,7 +6,7 @@ const DeviceList = () =>{
 return(
     <>
 <Header/>
-<Stack display={"flex"} flexWrap={"wrap"} >{
+<Stack marginTop={"24"} display={"flex"} flexWrap={"wrap"} >{
     DEVICES.map((device, idx) => <Device {...device} key={idx} />)
     }
     </Stack>
@@ -20,9 +20,11 @@ interface DeviceProps{
 export const Device = ({name, description} : DeviceProps) =>{
     const { isOpen, onOpen, onClose } = useDisclosure()
 
-   return ( <Card padding={2} width={"fit-content"}>
+   return ( <Card padding={"4"} display={"flex"} flexDirection={"column"}  width={"md"} height={"fit-content"}>
+    <VStack alignItems={"left"}>
     <Text as="h3">{name}</Text>
     <Text as="p">{description}</Text>
+    </VStack>
     <HStack>
     <Button colorScheme="purple" variant={"solid"} size={"sm"}>Edit Details</Button>
     <Button onClick={onOpen} colorScheme="purple" variant={"outline"} size={"sm"}>Access Device</Button>
@@ -33,7 +35,7 @@ export const Device = ({name, description} : DeviceProps) =>{
           <ModalHeader>Access Device</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-          <FormControl>
+          <FormControl isRequired>
   <FormLabel>Device Pin</FormLabel>
   <Input type="password" placeholder="123443"/>
   </FormControl>  

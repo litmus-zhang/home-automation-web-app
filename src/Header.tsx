@@ -6,7 +6,7 @@ export default function Header(){
   const handleClick = () => setShow(!show)
 
     return(
-        <HStack justifyContent={"space-between"} padding={3}>
+        <HStack justifyContent={"space-between"} padding={3} marginBottom={"10"} background={"purple.100"} position={"fixed"} left={0} top={0} width={"full"} zIndex={10}>
           <Text fontSize={"1.5rem"} fontWeight={"bold"}>Home Auto</Text>
           <Button onClick={onOpen}>Add New Device</Button>
           <Modal isOpen={isOpen} onClose={onClose}>
