@@ -1,5 +1,4 @@
 import { Button, Card, Text, Stack, HStack, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, FormControl, FormLabel, Input } from "@chakra-ui/react";
-import { FC } from "react";
 import Header from "../Header";
 
 const DeviceList = () =>{
@@ -7,19 +6,22 @@ return(
     <>
 <Header/>
 <Stack display={"flex"} flexWrap={"wrap"} >{
-    [1,2,3,4,5].map((i, idx) => <Device key={idx} />)
+    DEVICES.map((device, idx) => <Device {...device} key={idx} />)
     }
     </Stack>
     </>
 )
 }
-
-export const Device : FC= () =>{
+interface DeviceProps{
+    name: string
+    description: string
+}
+export const Device = ({name, description} : DeviceProps) =>{
     const { isOpen, onOpen, onClose } = useDisclosure()
 
    return ( <Card padding={2} width={"fit-content"}>
-    <Text as="h3">Device Name</Text>
-    <Text as="p">Device Details</Text>
+    <Text as="h3">{name}</Text>
+    <Text as="p">{description}</Text>
     <HStack>
     <Button colorScheme="purple" variant={"solid"} size={"sm"}>Edit Details</Button>
     <Button onClick={onOpen} colorScheme="purple" variant={"outline"} size={"sm"}>Access Device</Button>
