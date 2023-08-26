@@ -1,5 +1,6 @@
 import { Button, Card, Text, Stack, HStack, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import Header from "../Header";
+import {DEVICES} from "../../constants";
 
 const DeviceList = () =>{
 return(
