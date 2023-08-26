@@ -22,8 +22,8 @@ export const Device = ({name, description} : DeviceProps) =>{
 
    return ( <Card padding={"4"} display={"flex"} flexDirection={"column"}  width={"md"} height={"fit-content"}>
     <VStack alignItems={"left"}>
-    <Text as="h3">{name}</Text>
-    <Text as="p">{description}</Text>
+    <Text as="h3" fontSize={"2xl"}>{name}</Text>
+    <Text as="p" fontSize={"sm"}>{description}</Text>
     </VStack>
     <HStack>
     <Button colorScheme="purple" variant={"solid"} size={"sm"}>Edit Details</Button>
